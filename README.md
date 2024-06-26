@@ -35,6 +35,7 @@ Configure your database connection string through your environment variables:
    ```bash
    $env:DefaultConnection="{connectionString}"
    ```
+NOTE: the double \\ is an escape sequence, switch the connection string to .\SQLEXPRESS.
 
 Replace {connectionString} with your actual database connection string.
 

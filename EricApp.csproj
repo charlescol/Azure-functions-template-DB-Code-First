@@ -25,4 +25,7 @@
       <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <None Include=".github\workflows\build-prod.yaml" />
+  </ItemGroup>
 </Project>
