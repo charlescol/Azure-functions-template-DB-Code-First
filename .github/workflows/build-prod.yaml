@@ -6,7 +6,7 @@ on:
 env:
   AZURE_FUNCTIONAPP_NAME: 'COLELLERwebService'   
   AZURE_FUNCTIONAPP_PACKAGE_PATH: '.'       
-  DOTNET_VERSION: '3.1.x'                   
+  DOTNET_VERSION: '8.x.x'                   
 
 jobs:
   build-and-deploy:

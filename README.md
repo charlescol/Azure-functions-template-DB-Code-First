@@ -50,3 +50,6 @@ dotnet ef database update
 
 
 To implement clean arch with DTO validation check out : https://medium.com/@yusufsarikaya023/clean-architecture-in-serverless-azure-function-713582c7dc9b
+
+
+troueIndex 45 
