@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "EricApp": {
+      "commandName": "Project",
+      "commandLineArgs": "host start --pause-on-error"
+    }
+  }
+}
