@@ -33,6 +33,10 @@ namespace Controllers
             catch (Exception e)
             {
                 _logger.LogError(e.Message);
+                if (e.InnerException != null)
+                {
+                    _logger.LogError("Inner exception: {0}", e.InnerException);
+                }
                 return new BadRequestResult();
             }
             return new OkObjectResult(null);
