@@ -1,8 +1,9 @@
 {
   "profiles": {
-    "EricApp": {
+    "WebService": {
       "commandName": "Project",
-      "commandLineArgs": "host start --pause-on-error"
+      "commandLineArgs": "--port 7132",
+      "launchBrowser": false
     }
   }
 }

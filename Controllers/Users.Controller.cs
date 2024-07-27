@@ -1,26 +1,28 @@
-using System;
-using System.IO;
-using System.Threading.Tasks;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using Microsoft.Azure.Functions.Worker;
 
 namespace Controllers
 {
     public class UsersController
     {
+
         private readonly Services.IUsersService<Models.Users> _service;
-        public UsersController(Services.IUsersService<Models.Users> service)
+        private readonly ILogger<UsersController> _logger;
+
+
+        public UsersController(Services.IUsersService<Models.Users> service, ILogger<UsersController> logger)
         {
             _service = service;
+            _logger = logger;
         }
-        [FunctionName("users")]
-        public async Task<IActionResult> CreateUsers(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)] HttpRequest req,
-            ILogger log)
+
+        [Function("users")]
+        public async Task<IActionResult> CreateUsers2([HttpTrigger(AuthorizationLevel.Anonymous, "post")] HttpRequest req)
         {
             try
             {
@@ -30,7 +32,7 @@ namespace Controllers
             }
             catch (Exception e)
             {
-                log.LogError(e.Message);
+                _logger.LogError(e.Message);
                 return new BadRequestResult();
             }
             return new OkObjectResult(null);
